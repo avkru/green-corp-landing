@@ -5,10 +5,16 @@ body {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+
+  background-color: #fff;
 }
 
 .header__logo {
@@ -44,13 +50,10 @@ button {
   align-items: center;
   padding-top: 115px;
   padding-bottom: 115px;
+  
   background: url('img/back.png') no-repeat;
   background-position: center;
   background-size: cover;
-}
-
-.about__images {
-  display: flex;
 }
 
 .about__image {
@@ -58,7 +61,8 @@ button {
 }
 
 .about__sun-image {
-  align-self: flex-start;
+  position: absolute;
+
   width: 100px;
   height: 100px;
 }
@@ -141,6 +145,8 @@ button {
 
   border: none;
   border-radius: 15px;
+
+  outline: none;
 }
 
 .form__submit {
@@ -152,10 +158,6 @@ button {
 
 select {
   appearance: none;
-}
-
-input {
-  outline: none;
 }
 
 button:hover {
@@ -204,4 +206,88 @@ footer {
 
 .footer__links a {
   margin-bottom: 15px;
+}
+
+/* Анимации */
+
+@keyframes rotation {
+  0% {transform: none;}
+  100% {transform: rotate(360deg);}
+}
+  
+.about__sun-image {
+  animation: rotation 10s linear infinite;
+}
+
+.animate__animated.animate__fadeInLeft,
+.animate__animated.animate__fadeInRight {
+  --animate-duration: 2s;
+}
+
+/* Версия сайта для планшетов */
+
+@media (min-width: 720px) and (max-width: 1024px) {
+  .about {
+    padding: 115px 20px;
+  }
+
+  .about h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .about__sun-image {
+    width: 75px;
+    height: 75px;
+  }
+
+  .about__image {
+    width: 280px;
+  }
+}
+
+/* Мобильная версия сайта */
+
+@media (min-width: 320px) and (max-width: 720px) {
+  header {
+    padding: 10px;
+  }
+
+  .header__logo {
+    height: 20px;
+  }
+
+  header a {
+    margin-right: 20px;
+  }
+
+  .about,
+  .form,
+  footer {
+    padding: 50px 10px;
+    padding: 50px 10px;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+  }
+
+  .about h1,
+  .form h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .about__sun-image {
+    width: 75px;
+    height: 75px;
+  }
+
+  .about__image {
+    width: 280px;
+  }
+
+  .footer__container {
+    flex-direction: column;
+  }
 }

@@ -227,7 +227,7 @@ button {
   flex-shrink: 0;
   width: 50%;
 
-  background: url(/img/promo.jpg) center / cover;
+  background: url(img/promo.jpg) center / cover;
 }
 
 .promo__right {

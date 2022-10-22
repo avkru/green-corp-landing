@@ -5,6 +5,8 @@ body {
   color: #213053;
 }
 
+/* Header */
+
 header {
   position: sticky;
   top: 0;
@@ -48,6 +50,8 @@ button {
 
   cursor: pointer;
 }
+
+/* About */
 
 .about {
   display: flex;
@@ -95,6 +99,191 @@ button {
 
   border-radius: 20px;
 }
+
+/* Features */
+
+.features {
+  padding: 115px 60px;
+
+  background-color: #fff;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.card {
+  padding: 35px 40px 25px;
+
+  border: 1px solid #D9E4E6;
+  border-radius: 5px;
+}
+
+.card__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+
+  font-size: 32px;
+  font-weight: 700;
+
+  background-color: #eaeff9;
+  border-radius: 50%;
+}
+
+.card:first-child .card__logo {
+  color: #ffb406;
+}
+
+.card:nth-child(2) .card__logo {
+  color: #ad1714;
+}
+
+.card:last-child .card__logo {
+  color: #22a030;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 22px;
+
+  opacity: 0.8;
+}
+
+.features__border {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  border: 1px solid #E6EAF4;
+}
+
+.features__feedback {
+  display: flex;
+}
+
+.features__feedback-left {
+  padding-left: 10px;
+}
+
+.features__feedback-left h2 {
+  font-size: 48px;
+}
+
+.features__feedback-left p {
+  font-size: 18px;
+  line-height: 26px;
+
+  opacity: 0.7;
+}
+
+.features__feedback-right {
+  display: flex;
+  align-items: center;
+}
+
+.features__box {
+  padding: 30px 40px 25px;
+
+  color: #fff;
+
+  border-radius: 25px;
+}
+
+.features__box h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  font-size: 48px;
+}
+
+.features__savings-box {
+  margin-right: 30px;
+  padding-bottom: 60px;
+
+  background-color: #dc5e26;
+  box-shadow: 0 6px 0 rgb(221 95 38 / 20%);
+}
+
+.features__rate-box {
+  background-color: #1D263A;
+  box-shadow: 0 6px 0 rgb(29 38 58 / 20%);
+}
+
+.stars {
+  color: #ff7039;
+}
+
+/* Promo */
+
+.promo {
+  display: flex;
+}
+
+.promo__image {
+  flex-shrink: 0;
+  width: 50%;
+
+  background: url(/img/promo.jpg) center / cover;
+}
+
+.promo__right {
+  padding: 160px 60px;
+
+  background-color: #dd5f26;
+}
+
+.promo__card {
+  padding: 30px 40px;
+
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+.promo__card p {
+  opacity: 0.8;
+}
+
+.promo__card p::before {
+  content: "";
+
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+
+  background-color: #ec6b29;
+  border-radius: 50%;
+}
+
+.promo__button {
+  text-align: center;
+}
+
+.promo__button button {
+  margin-top: 20px;
+  padding: 15px 30px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  background-color: #107b1c;
+}
+
+.promo__button .fa-chevron-right {
+  margin-left: 5px;
+  
+  font-size: 15px;
+}
+
+/* Form */
 
 .form__container {
   width: 550px;
@@ -173,6 +362,8 @@ button:hover {
   transition: background-color 0.3s ease-in;
 }
 
+/* Footer */
+
 footer {
   padding: 90px 20px;
 
@@ -214,7 +405,7 @@ footer {
   margin-bottom: 15px;
 }
 
-/* Анимации */
+/* Animations */
 
 @keyframes rotation {
   0% {transform: none;}
@@ -230,7 +421,7 @@ footer {
   --animate-duration: 2s;
 }
 
-/* Версия сайта для планшетов */
+/* Tablet version */
 
 @media (min-width: 720px) and (max-width: 1024px) {
   .about {
@@ -252,7 +443,7 @@ footer {
   }
 }
 
-/* Мобильная версия сайта */
+/* Mobile version */
 
 @media (min-width: 320px) and (max-width: 720px) {
   header {
@@ -268,6 +459,7 @@ footer {
   }
 
   .about,
+  .features,
   .form,
   footer {
     padding: 50px 10px;
@@ -291,6 +483,49 @@ footer {
 
   .about__image {
     width: 280px;
+  }
+
+  .cards {
+    grid-template-columns: auto;
+  }
+
+  .features__feedback {
+    flex-direction: column;
+  }
+
+  .features__feedback-left {
+    padding-left: 0;
+  }
+
+  .features__feedback-left h2 {
+    font-size: 36px;
+  }
+
+  .features__feedback-right {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .features__box h3 {
+    font-size: 36px;
+  }
+
+  .features__savings-box {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .promo {
+    flex-direction: column-reverse;
+  }
+
+  .promo__image {
+    width: 100%;
+    height: 500px;
+  }
+
+  .promo__right {
+    padding: 50px 10px;
   }
 
   .footer__container {

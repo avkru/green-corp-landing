@@ -54,6 +54,8 @@ button {
 /* About */
 
 .about {
+  position: relative;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -63,6 +65,14 @@ button {
   background: url('img/back.png') no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.orb-canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  height: 100%;
 }
 
 .about__image {
